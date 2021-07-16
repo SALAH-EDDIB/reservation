@@ -1,0 +1,69 @@
+﻿@model IEnumerable<reservation.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+
+    var first = @Model.FirstOrDefault();
+
+}
+
+
+<div class="container">
+
+    @if (Model.Count() != 0)
+    {
+
+        <h3 class="mb-4 mt-5" style="color:#4b7bec;">  @first.Date.ToLongDateString()</h3>
+        <h3 class="mb-4" style="color:#4b7bec;">@first.ReservationType.Type</h3>
+
+
+        <table class="table  table-hover ">
+            <thead>
+                <tr>
+                    <th>
+                        Nom
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsValid)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+
+                    <tr>
+                        <td>
+                            @item.User.FirstName   @item.User.LastName
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsValid)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+        @if (first.IsValid)
+        {
+           <a asp-action="reserver" asp-controller="Home" >Back to List</a>
+        }
+        else
+        {
+
+            <form asp-action="Validate" asp-route-date="@first.Date" asp-route-type="@first.ReservationType.Type">
+                <button class="btn btn-primary  pb-3 pt-3" type="submit" style="background-color:#4b7bec;">Valider la list</button>
+            </form>
+        }
+    }
+    else
+    {
+        <h2>No reservation for today</h2>
+    }
+
+</div>

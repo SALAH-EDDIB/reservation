@@ -1,0 +1,269 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    margin: 0  ;
+    padding: 0  ;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f3f7;
+    font-family: "Roboto", sans-serif;
+}
+
+.calandrier-container {
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.calandrier-info {
+    width: 330px;
+    border-radius: 20px 0 0 20px;
+    background-color: #4b7bec;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+
+    .calandrier-info .num-date {
+        font-size: 120px;
+        width: 50%;
+        margin: 0 auto;
+        font-weight: 700;
+    }
+
+    .calandrier-info .num-jour {
+        width: 50%;
+        margin: 50px auto;
+        font-size: 30px;
+        position: relative;
+        visibility: hidden;
+    }
+
+        .calandrier-info .num-jour.active {
+            visibility: visible;
+        }
+
+    .calandrier-info .num-day {
+        width: 50%;
+        margin: 0px auto;
+        font-size: 30px;
+        position: relative;
+    }
+
+    .calandrier-info .submit-btn {
+        background-color: #4b7bec;
+        font-size: 30px;
+        padding: 5px 24px;
+        color: white;
+        border-radius: 10px;
+        border: 3px solid white;
+        visibility: hidden;
+        cursor: pointer;
+        transition: all 0s ease;
+        user-select: none;
+    }
+
+        .calandrier-info .submit-btn:hover {
+            color: #4b7bec;
+            background-color: white;
+        }
+
+        .calandrier-info .submit-btn.active {
+            transition: all 0.3s ease;
+            visibility: visible;
+        }
+
+        .calandrier-info .submit-btn.delete {
+            color: white;
+            background-color: #ee5b5b;
+        }
+
+            .calandrier-info .submit-btn.delete:hover {
+                transform:scale(1.1);
+            }
+
+.calandrier {
+    width: 880px;
+    border-radius: 0 20px 20px 0;
+    background-color: white;
+    display: grid;
+    overflow: hidden;
+    user-select: none;
+}
+
+    .calandrier div {
+        display: grid;
+        border-bottom: 1px solid #ececec;
+        grid-template-columns: 2fr 4.5fr 2fr;
+        
+    }
+
+        .calandrier div .Day {
+            width: 90%;
+            margin: 11px auto;
+            background-color: #a5b1c2;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+            .calandrier div .Day.active {
+                background-color: #70a1ff;
+            }
+
+        .calandrier div .Day.active.valid {
+            background-color: #1abc9c;
+        }
+
+
+
+        .calandrier div .evening {
+            width: 80%;
+            margin: 11px auto;
+            background-color: #a5b1c2;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+
+            .calandrier div .evening.active {
+                background-color: #1e90ff;
+            }
+                .calandrier div .evening.active.valid {
+                    background-color: #1abc9c;
+                }
+
+        .calandrier div .weekend {
+            width: 93%;
+            margin: 11px auto;
+            background-color: #a5b1c2;
+            border-radius: 30px;
+            cursor: pointer;
+            grid-column: span 2;
+        }
+
+            .calandrier div .weekend.active {
+                background-color: #4b7bec;
+            }
+                .calandrier div .weekend.active.valid {
+                    background-color: #1abc9c;
+                }
+
+        .calandrier div h2 {
+            border-right: 1px solid #ececec;
+            padding: 15px 30px;
+            text-align: center;
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.5em;
+
+
+        }
+
+        .calandrier .jour h2 {
+
+            padding: 17px 30px;
+           
+        }
+    .calandrier .jour h3:nth-child(3) {
+        margin-left: 14px;
+    }
+
+        .calandrier div h3 {
+            font-size: 24px;
+            padding: 17px 30px;
+            margin: 0;
+            
+            font-weight: bold;
+        }
+
+        .calandrier div:last-child {
+            border: hidden;
+        }
+
+    .calandrier .jour {
+        grid-template-columns: 3.08fr 6fr 2fr 2fr;
+    }
+
+        .calandrier .jour h3:last-child {
+            margin-left: auto;
+        }
+
+.navigate {
+    color: #4b7bec;
+    margin: 60px auto 10px;
+    padding-left: 130px;
+    font-size: 26px;
+    height: 30px;
+    width: 700px;
+    display: flex;
+    user-select: none;
+}
+
+    .navigate i {
+        cursor: pointer;
+        margin-right: 25px;
+    }

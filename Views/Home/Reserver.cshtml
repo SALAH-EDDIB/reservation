@@ -1,0 +1,82 @@
+﻿
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> UserManager
+
+<div class="navigate">
+    <i class="fas fa-lg fa-chevron-circle-left previous "></i>
+    <i class="fas fa-lg fa-chevron-circle-right next "></i>
+</div>
+
+
+<div class="calandrier-container">
+
+    <div class="calandrier-info">
+        <div class="num-date">28</div>
+        <div class="num-day">THURSDAY</div>
+        <div class="num-jour">Jour</div>
+        <button class="submit-btn">Reserver</button>
+    </div>
+
+    <div class="calandrier">
+
+        <div class="jour">
+            <h2>Jour</h2>
+            <h3>9h</h3>
+            <h3>5h</h3>
+            <h3>8h</h3>
+
+        </div>
+
+        <div class="lun">
+            <h2>Lundi</h2>
+
+        </div>
+
+        <div class="mar">
+            <h2>Mardi</h2>
+
+        </div>
+
+        <div class="mer">
+            <h2>Mercredi</h2>
+
+        </div>
+        <div class="jeu">
+            <h2>Jeudi</h2>
+
+        </div>
+        <div class="ven">
+            <h2>Vendredi</h2>
+
+        </div>
+
+        <div class="sam">
+            <h2>Samedi</h2>
+        </div>
+
+        <div class="dim">
+            <h2>Dimanche</h2>
+        </div>
+
+    </div>
+</div>
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <script>
+        const role = "admin"
+    </script>
+
+}
+else
+{
+    <script>
+        const role = "etudiant"
+    </script>
+}
+
+
+
+
